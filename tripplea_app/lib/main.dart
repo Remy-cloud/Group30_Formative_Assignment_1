@@ -8,7 +8,7 @@ import 'screens/assignments_screen.dart';
 import 'screens/schedule_screen.dart';
 import 'screens/profile_screen.dart';
 import 'screens/signup_screen.dart';
-import 'theme/alu_theme.dart'; // Contains AppColors and appTheme
+import 'theme/app_theme.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -71,7 +71,7 @@ class MainNavigation extends StatefulWidget {
 class _MainNavigationState extends State<MainNavigation> {
   int _currentIndex = 0;
 
-  // The four main screens of the app
+  // The four main screens
   final List<Widget> _screens = [
     const DashboardScreen(),
     const AssignmentsScreen(),
@@ -86,7 +86,7 @@ class _MainNavigationState extends State<MainNavigation> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         onTap: (index) => setState(() => _currentIndex = index),
-        type: BottomNavigationBarType.fixed, // Needed for 4+ items
+        type: BottomNavigationBarType.fixed,
         selectedItemColor: AppColors.primaryOrange,
         unselectedItemColor: AppColors.grey,
         items: const [
@@ -114,6 +114,7 @@ class _MainNavigationState extends State<MainNavigation> {
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
+
   final String title;
 
   @override
